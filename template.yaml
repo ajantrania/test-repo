@@ -16,6 +16,13 @@ Resources:
       Tracing: Active
       Policies:
         - AWSXrayWriteOnlyAccess
+        - Statement:
+            - Effect: Allow
+              Action:
+                - dynamodb:ListTables
+                - sqs:GetQueueAttributes
+                - sqs:ListQueues
+              Resource: '*'
 Parameters:
   StackTagName:
     Type: String
